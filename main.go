@@ -2,9 +2,15 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"github.com/joho/godotenv"
 )
 
 
 func main(){
-	fmt.Printf("Hello world")
+
+	godotenv.Load(".env")
+
+	port := os.Getenv("PORT")
+	fmt.Printf("Hello world %v",port)
 }
